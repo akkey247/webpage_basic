@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-/*
 header {
   -moz-box-shadow: 0px 0px 10px #000000;
   -webkit-box-shadow: 0px 0px 10px #000000;
@@ -76,4 +75,85 @@ article {
   margin-top: 50px;
   padding: 10px;
 }
+
+.box {
+  margin-bottom: 30px;
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+}
+.box p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 角丸 */
+/*
+1番目 水平方向へぼかし。1px で右方向、-1px で左方向。
+2番目 垂直方向へぼかし。1px で下方向。-1px で上方向。
+3番目 ぼかしの距離。値が大きくなるとぼかしが強くなります。
+4番目 影の広がり。値が大きくなると影の範囲が広くなります。
 */
+.box-radius1 {
+  -moz-border-radius: 5px 5px 5px 5px;    /* 左上 */
+  -webkit-border-radius: 5px 5px 5px 5px; /* 左上 */
+  border-radius: 5px 5px 5px 5px;         /* 左上 */
+}
+.box-radius1 {
+  -moz-border-radius-topleft: 5px;     /* 左上 */
+  -moz-border-radius-topright: 5px;    /* 右上 */
+  -moz-border-radius-bottomleft: 5px;  /* 左下 */
+  -moz-border-radius-bottomright: 5px; /* 右下 */
+  -webkit-border-top-left-radius: 5px;     /* 左上 */
+  -webkit-border-top-right-radius: 5px;    /* 右上 */
+  -webkit-border-bottom-left-radius: 5px;  /* 左下 */
+  -webkit-border-bottom-right-radius: 5px; /* 右下 */
+  border-top-left-radius: 5px;     /* 左上 */
+  border-top-right-radius: 5px;    /* 右上 */
+  border-bottom-left-radius: 5px;  /* 左下 */
+  border-bottom-right-radius: 5px; /* 右下 */
+}
+
+/* ドロップシャドウ */
+/*
+※IE8以下非対応
+1番目 水平方向へぼかし。1px で右方向、-1px で左方向。
+2番目 垂直方向へぼかし。1px で下方向。-1px で上方向。
+3番目 ぼかしの距離。値が大きくなるとぼかしが強くなります。
+4番目 影の広がり。値が大きくなると影の範囲が広くなります。
+5番目 色の指定。RGBa や カラーコード（16進法）を使います。
+6番目 影の向き。デフォルトでは影は内→外方向です。inset を指定すると外→内方向へ影の向きが変わります。
+*/
+.box-dropshadow {
+  box-shadow: 10px 10px 10px 10px #000;
+  -webkit-box-shadow: 10px 10px 10px 10px #000;
+  -moz-box-shadow: 10px 10px 10px 10px #000;
+}
+
+/* テキストシャドウ */
+/*
+※IE8以下非対応
+1番目 水平方向に指定。1pxで右方向に影、-1px で左方向に影です。
+2番目 垂直方向に指定。1pxで下方向に影、-1px で上方向に影です。
+3番目 ぼかしの半径を指定。
+4番目 色を指定。
+*/
+.box-textshadow p {
+  -moz-text-shadow:5px 5px 5px #ccc;
+  -webkit-text-shadow:5px 5px 5px #ccc;
+  text-shadow:5px 5px 5px #ccc;
+}
+
+/* グラデーション */
+/*
+(方向, #カラーコード 位置%, #カラーコード 位置%, …)
+という風に指定する。
+*/
+.box-gradient {
+  /*Other Browser*/
+  background: #ccc;
+  /*For Old WebKit*/
+  background: -webkit-linear-gradient(top, #ccc 0%, #fff 100%);
+  /*For Modern Browser*/
+  background: linear-gradient(to bottom, #ccc 0%, #fff 100%);
+}
